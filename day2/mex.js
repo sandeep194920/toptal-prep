@@ -24,6 +24,29 @@ function findMEX(arr) {
   // let mex = 1; // Start from 1!
   // while (set.has(mex)) mex++;
 
+  const array = [...arr];
+
+  for (let i = 0; i < array.length; i++) {
+    // make negetives or 0s as array length
+    if (array[i] <= 0) {
+      array[i] = array.length + 1;
+    }
+  }
+
+  // set - to value touched
+  for (let i = 0; i < array.length; i++) {
+    const val = Math.abs(array[i]);
+    if (val <= array.length && array[val - 1] > 0) {
+      array[val - 1] = -array[val - 1];
+    }
+  }
+
+  // now get the missing number
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] > 0) return i + 1;
+  }
+
+  return array.length + 1;
 }
 
 function solution(A) {
@@ -32,6 +55,40 @@ function solution(A) {
   // Flip at index (mex-1) to value mex
   // Count operations
 
+  let operations = 0; // 1
+
+  const set = new Set(); // 1
+
+  // for works, but while is cleaner as we dont need set.
+
+  // for (let i = 0; i < A.length; i++) {
+  //   const mex = findMEX(A); // 3 -> [2,1,4]
+
+  //   // [100,200,300] // mex => 2
+
+  //   // so that the same number is not checked again. if we get same mex then everything is already done - no need to check again.
+  //   if (set.has(mex)) {
+  //     break;
+  //   } else {
+  //     set.add(mex);
+  //   }
+
+  //   if (mex <= A.length) {
+  //     A[mex - 1] = mex;
+  //     operations++;
+  //   }
+  // }
+
+  while (true) {
+    const mex = findMEX(A);
+
+    if (mex > A.length) break;
+
+    A[mex - 1] = mex;
+    operations++;
+  }
+
+  return operations;
 }
 
 // ============ TEST CASES ============
