@@ -26,12 +26,17 @@ function solution(A, B, C) {
   // TODO: Implement Combinatorics
   // Step 1: Count unique cities in each country
   // Hint: const uniqueA = new Set(A).size;
-  
+
   // Step 2: Multiply unique counts
   // Hint: result = uniqueA * uniqueB * uniqueC;
-  
+
   // Step 3: Check for overflow (result > 1,000,000,000 → return -1)
-  
+
+  const result = new Set(A).size * new Set(B).size * new Set(C).size;
+
+  if (result > 1000000000) return -1;
+
+  return result;
 }
 
 // ============ TEST CASES ============
@@ -58,9 +63,9 @@ console.log("Expected: 1");
 console.log(result3 === 1 ? "✅ PASS\n" : "❌ FAIL\n");
 
 // Test 4: Large numbers (overflow check)
-const largeA = Array.from({length: 10000}, (_, i) => i);
-const largeB = Array.from({length: 10000}, (_, i) => i);
-const largeC = Array.from({length: 10000}, (_, i) => i);
+const largeA = Array.from({ length: 10000 }, (_, i) => i);
+const largeB = Array.from({ length: 10000 }, (_, i) => i);
+const largeC = Array.from({ length: 10000 }, (_, i) => i);
 const result4 = solution(largeA, largeB, largeC);
 console.log("Test 4:", result4);
 console.log("Expected: -1 (overflow)");
@@ -73,4 +78,6 @@ console.log("Expected: 1");
 console.log(result5 === 1 ? "✅ PASS\n" : "❌ FAIL\n");
 
 console.log("========================================");
-console.log("Tip: Multiplication principle! Unique choices in each country multiply.");
+console.log(
+  "Tip: Multiplication principle! Unique choices in each country multiply.",
+);
