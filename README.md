@@ -15,7 +15,9 @@ toptal-prep/
 ## What's Inside
 
 ### [toptal.md](toptal.md)
+
 Complete guide to the 9 essential patterns for Toptal screening:
+
 - Array Manipulation (MEX, Triangle Inequality, etc.)
 - Prefix/Suffix Sums
 - Binary Gap
@@ -27,7 +29,9 @@ Complete guide to the 9 essential patterns for Toptal screening:
 - BFS + Graph Building
 
 ### [CLAUDE.md](CLAUDE.md)
+
 Your guide to using Claude Code effectively:
+
 - Prompt templates for debugging, code review, and optimization
 - Learning strategies for each pattern
 - Mock test preparation tips
@@ -44,6 +48,7 @@ Your guide to using Claude Code effectively:
 ## Learning Philosophy
 
 This repository follows a learning-first approach:
+
 - ✅ Use Claude Code to understand concepts and debug
 - ✅ Write all code yourself
 - ✅ Ask for hints when stuck for 20+ minutes
@@ -90,7 +95,9 @@ This repository follows a learning-first approach:
 
 Create a checklist to track your mastery:
 
-- [ ] MEX (Minimum Excluded Value)
+- [x] Two Sum
+- [x] MEX (Minimum Excluded Value)
+- [ ] Number of islands
 - [ ] Triangle Inequality
 - [ ] Binary Gap
 - [ ] Prefix/Suffix Sums
@@ -103,6 +110,7 @@ Create a checklist to track your mastery:
 ## Contributing to Your Learning
 
 As you practice:
+
 1. Add your solutions to a `solutions/` folder
 2. Document tricky edge cases you encountered
 3. Note optimization insights
